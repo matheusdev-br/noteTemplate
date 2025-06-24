@@ -46,7 +46,7 @@ const Editor: React.FC<NoteEditorOpts> = ({ note, onSave, characterLimit }) => {
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
       <input
         type="text"
-        placeholder="Título da Nota"
+        placeholder="Título da Not a"
         value={title}
         onChange={handleTitleChange}
         style={{
