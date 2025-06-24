@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import type { Note } from '../models/types';
-import { debounce } from '../util/debounceFunc';
+import { debounce } from '../util/debounceFunction';
 
 interface NoteEditorOpts {
   note: Note;
