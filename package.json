@@ -2,7 +2,7 @@
   "name": "note-template",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://matheusdev-br.github.io/note-template",
+  "homepage": "https://matheusdev-br.github.io/noteTemplate",
   "type": "module",
   "scripts": {
     "dev": "vite",
