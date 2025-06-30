@@ -1,29 +1,30 @@
-name: Build and Deploy Jekyll site to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # Change if your default branch is different
+      - main
 
 jobs:
-  github-pages:
+  build-and-deploy:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          ruby-version: '3.1' # Or the version you need
+          node-version: '18'
 
       - name: Install dependencies
-        run: bundle install
+        run: npm install
 
-      - name: Build the site with Jekyll
-        run: bundle exec jekyll build
+      - name: Build project
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          publish_dir: ./dist  # Change this to your actual build output folder
